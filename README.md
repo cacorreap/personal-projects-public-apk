@@ -11,17 +11,25 @@ Android, organizadas por proyecto.
 index.html            ← la página de descargas (lista de proyectos)
 apps/
   kidnanzas/
-    kidnanzas.apk      ← el instalable
+    kidnanzas.apk      ← APK chica: vive en el repo
     preview.png        ← captura para la tarjeta
-  cooksnap/            ← (próximamente)
-  mentirosamente/      ← (próximamente)
+  cooksnap/
+    icon.png           ← ícono (la APK enlaza al Release de cooksnap-public)
+  mentirosamente/
+    icon.png           ← ícono (la APK enlaza al Release de mentirosamente-public)
 ```
+
+Cada proyecto es una tarjeta definida en el array `PROJECTS` dentro de
+[`index.html`](index.html). El campo `apk` puede ser un archivo local
+(`apps/<slug>/x.apk`) **o** una URL de GitHub Release.
 
 ## Agregar un proyecto nuevo
 
-1. Crea la carpeta `apps/<slug>/` y copia ahí su `.apk` (y un `preview.png` opcional).
-2. Abre [`index.html`](index.html) y agrega un objeto al array `PROJECTS` (hay
-   ejemplos comentados para Cooksnap y Mentirosamente).
+1. Copia su ícono a `apps/<slug>/icon.png` (o usa un `emoji`).
+2. Agrega un objeto al array `PROJECTS` en `index.html` con su `apk`:
+   - APK **< 100 MB**: cópiala a `apps/<slug>/` y usa la ruta local.
+   - APK **≥ 100 MB**: súbela como **GitHub Release** y usa la URL
+     `releases/latest/download/<archivo>.apk`.
 3. `git add . && git commit -m "Agrega <proyecto>" && git push`.
 
 La página se actualiza sola unos segundos después del push.
@@ -29,6 +37,6 @@ La página se actualiza sola unos segundos después del push.
 ## Notas
 
 - Las APKs van firmadas con llave debug: sirven para instalar directamente
-  (sideload), no para Google Play.
-- GitHub limita cada archivo a 100 MB. Si una APK pesa más, conviene usar
-  **GitHub Releases** o Git LFS y enlazar desde aquí.
+  (sideload), no necesariamente para Google Play.
+- GitHub bloquea archivos > 100 MB; por eso CookSnap (116 MB) se enlaza a su
+  Release en vez de vivir en este repo.

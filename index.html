@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mis Apps · Descargas</title>
+<title>Apps de César Correa · Descargas</title>
 <meta name="description" content="Descarga las APKs de mis proyectos personales para Android." />
 <style>
   :root {
     --bg: #0f1320;
-    --bg2: #1a2036;
     --card: #1e2540;
     --text: #f2f5ff;
     --soft: #9aa6cc;
@@ -47,6 +46,10 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 34px; flex-shrink: 0;
   }
+  .icon-img {
+    width: 60px; height: 60px; border-radius: 16px; flex-shrink: 0;
+    object-fit: cover; border: 1px solid #2c3559;
+  }
   .title h2 { font-size: 21px; font-weight: 800; }
   .title .tag { color: var(--soft); font-size: 14px; margin-top: 2px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -56,8 +59,7 @@
     padding: 5px 10px; border-radius: 999px;
   }
   .preview {
-    width: 100%; border-radius: 12px; border: 1px solid #2c3559;
-    cursor: zoom-in; background: #11152400;
+    width: 100%; border-radius: 12px; border: 1px solid #2c3559; cursor: zoom-in;
   }
   .actions { display: flex; gap: 10px; margin-top: auto; }
   .btn {
@@ -68,14 +70,15 @@
   }
   .btn:hover { filter: brightness(1.05); }
   .btn:active { transform: scale(.98); }
-  .btn.ghost { background: transparent; color: var(--soft); border: 1px solid #39426b; }
+  .btn.ghost { background: transparent; color: var(--soft); border: 1px solid #39426b; flex: 0 0 auto; }
   details {
     margin-top: 34px; background: var(--card); border: 1px solid #2c3559;
     border-radius: 16px; padding: 16px 18px;
   }
   details summary { cursor: pointer; font-weight: 800; font-size: 16px; }
   details ol { margin: 12px 0 0 20px; color: var(--soft); line-height: 1.7; }
-  footer { text-align: center; color: var(--soft); font-size: 13px; margin-top: 30px; }
+  footer { text-align: center; color: var(--soft); font-size: 14px; margin-top: 34px; line-height: 1.7; }
+  footer .sign { font-size: 16px; font-weight: 800; color: var(--text); }
   footer a { color: var(--accent); }
 </style>
 </head>
@@ -99,13 +102,15 @@
   </details>
 
   <footer>
-    Hecho con ❤️ · <a href="https://github.com/cacorreap/personal-projects-public-apk">Código de esta página</a>
+    <div class="sign">Hecho por César Correa 💛</div>
+    <div><a href="https://github.com/cacorreap/personal-projects-public-apk">Código de esta página</a></div>
   </footer>
 </div>
 
 <script>
-  // ── Para agregar un proyecto nuevo: copia la APK a apps/<slug>/, y añade
-  //    un objeto aquí. Eso es todo. ───────────────────────────────────────
+  // ── Para agregar un proyecto: copia su ícono a apps/<slug>/icon.png (o usa
+  //    un emoji), y añade un objeto aquí. `apk` puede ser un archivo local o
+  //    una URL de Release. ──────────────────────────────────────────────────
   const PROJECTS = [
     {
       name: "Kidnanzas",
@@ -115,28 +120,35 @@
       size: "65 MB",
       apk: "apps/kidnanzas/kidnanzas.apk",
       preview: "apps/kidnanzas/preview.png",
-      repo: "https://github.com/cacorreap/kidnanzas",
+      link: { label: "Código", url: "https://github.com/cacorreap/kidnanzas" },
     },
-    // {
-    //   name: "Cooksnap", emoji: "🍳", tagline: "…",
-    //   version: "1.0.0", size: "— MB",
-    //   apk: "apps/cooksnap/cooksnap.apk", preview: "apps/cooksnap/preview.png",
-    //   repo: "https://github.com/cacorreap/cooksnap",
-    // },
-    // {
-    //   name: "Mentirosamente", emoji: "🎭", tagline: "…",
-    //   version: "1.0.0", size: "— MB",
-    //   apk: "apps/mentirosamente/mentirosamente.apk",
-    //   preview: "apps/mentirosamente/preview.png",
-    //   repo: "https://github.com/cacorreap/mentirosamente",
-    // },
+    {
+      name: "CookSnap",
+      iconImg: "apps/cooksnap/icon.png",
+      tagline: "Recetario con IA: descubre qué cocinar desde una foto.",
+      version: "1.0.1",
+      size: "116 MB",
+      apk: "https://github.com/cacorreap/cooksnap-public/releases/latest/download/cooksnap.apk",
+      link: { label: "Más info", url: "https://cacorreap.github.io/cooksnap-public/" },
+    },
+    {
+      name: "Mentirosamente",
+      iconImg: "apps/mentirosamente/icon.png",
+      tagline: "Juego social de mentiras y risas para jugar en grupo.",
+      version: "1.0.0",
+      size: "84 MB",
+      apk: "https://github.com/cacorreap/mentirosamente-public/releases/latest/download/mentirosamente.apk",
+      link: { label: "Más info", url: "https://cacorreap.github.io/mentirosamente-public/" },
+    },
   ];
 
   const grid = document.getElementById("grid");
   grid.innerHTML = PROJECTS.map((p) => `
     <div class="card">
       <div class="top">
-        <div class="icon">${p.emoji}</div>
+        ${p.iconImg
+          ? `<img class="icon-img" src="${p.iconImg}" alt="${p.name}" />`
+          : `<div class="icon">${p.emoji || "📦"}</div>`}
         <div class="title">
           <h2>${p.name}</h2>
           <div class="tag">${p.tagline}</div>
@@ -150,7 +162,7 @@
       ${p.preview ? `<a href="${p.preview}" target="_blank" rel="noopener"><img class="preview" src="${p.preview}" alt="Captura de ${p.name}" loading="lazy" /></a>` : ""}
       <div class="actions">
         <a class="btn" href="${p.apk}" download>⬇️ Descargar APK</a>
-        ${p.repo ? `<a class="btn ghost" href="${p.repo}" target="_blank" rel="noopener">Código</a>` : ""}
+        ${p.link ? `<a class="btn ghost" href="${p.link.url}" target="_blank" rel="noopener">${p.link.label}</a>` : ""}
       </div>
     </div>
   `).join("");
