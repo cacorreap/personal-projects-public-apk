@@ -156,10 +156,9 @@
       tagline: "Juego social de mentiras y risas para jugar en grupo.",
       version: "1.0.0",
       size: "84 MB",
-      // Descarga privada: pide contraseña antes de bajar. Cambia el valor aquí.
-      password: "familia",
-      apk: "https://github.com/cacorreap/mentirosamente-public/releases/latest/download/mentirosamente.apk",
-      link: { label: "Más info", url: "https://cacorreap.github.io/mentirosamente-public/" },
+      // Acceso anticipado: el botón lleva a la página de Mentirosamente (la descarga
+      // privada con contraseña vive allá, no en este hub).
+      cta: { label: "Acceso anticipado", url: "https://cacorreap.github.io/mentirosamente-public/" },
       preview: "apps/mentirosamente/banner.png",
       gallery: [
         "apps/mentirosamente/shots/1-home.png",
@@ -172,19 +171,8 @@
     },
   ];
 
-  // Descarga con contraseña (gate suave del lado del cliente).
-  function dl(i) {
-    const p = PROJECTS[i];
-    if (p.password) {
-      const t = prompt("Esta descarga es privada. Escribe la contraseña:");
-      if (t === null) return;
-      if (t !== p.password) { alert("Contraseña incorrecta."); return; }
-    }
-    window.location.href = p.apk;
-  }
-
   const grid = document.getElementById("grid");
-  grid.innerHTML = PROJECTS.map((p, i) => `
+  grid.innerHTML = PROJECTS.map((p) => `
     <div class="card">
       <div class="top">
         ${p.iconImg
@@ -203,8 +191,8 @@
       ${p.preview ? `<a href="${p.preview}" target="_blank" rel="noopener"><img class="preview" src="${p.preview}" alt="Captura de ${p.name}" loading="lazy" /></a>` : ""}
       ${p.gallery && p.gallery.length ? `<div class="gallery">${p.gallery.map((s) => `<a href="${s}" target="_blank" rel="noopener"><img src="${s}" alt="Captura de ${p.name}" loading="lazy" /></a>`).join("")}</div>` : ""}
       <div class="actions">
-        ${p.password
-          ? `<a class="btn" href="javascript:void(0)" onclick="dl(${i})">🔒 Descargar APK</a>`
+        ${p.cta
+          ? `<a class="btn" href="${p.cta.url}" target="_blank" rel="noopener">🔐 ${p.cta.label}</a>`
           : `<a class="btn" href="${p.apk}" download>⬇️ Descargar APK</a>`}
         ${p.link ? `<a class="btn ghost" href="${p.link.url}" target="_blank" rel="noopener">${p.link.label}</a>` : ""}
       </div>
