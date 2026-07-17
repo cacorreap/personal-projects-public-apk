@@ -1,6 +1,6 @@
 {
-  "version": "1.4.1",
-  "versionCode": 8,
+  "version": "1.4.0",
+  "versionCode": 7,
   "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.4.0/gymjournal.apk",
-  "notes": "prueba de banner"
+  "notes": "Aviso de nuevas versiones dentro de la app."
 }
