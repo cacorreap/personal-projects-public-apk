@@ -1,6 +1,6 @@
 {
-  "version": "1.5.1",
-  "versionCode": 9,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.5.1/gymjournal.apk",
-  "notes": "Tu música ya no se corta durante el circuito."
+  "version": "1.6.0",
+  "versionCode": 10,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.6.0/gymjournal.apk",
+  "notes": "Spotify dentro del circuito: mira qué suena sin salir de la app."
 }
