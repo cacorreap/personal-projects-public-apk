@@ -1,6 +1,6 @@
 {
-  "version": "1.5.0",
-  "versionCode": 8,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.5.0/gymjournal.apk",
-  "notes": "Nuevo diseño del circuito por tiempo con temporizador circular."
+  "version": "1.5.1",
+  "versionCode": 9,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.5.1/gymjournal.apk",
+  "notes": "Tu música ya no se corta durante el circuito."
 }
