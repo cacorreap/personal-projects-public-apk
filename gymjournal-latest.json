@@ -1,6 +1,6 @@
 {
-  "version": "1.6.0",
-  "versionCode": 10,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.6.0/gymjournal.apk",
-  "notes": "Spotify dentro del circuito: mira qué suena sin salir de la app."
+  "version": "1.7.0",
+  "versionCode": 11,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.7.0/gymjournal.apk",
+  "notes": "Música dentro de la app: loops incluidos o importa tus canciones, suenan en el circuito. Spotify de un toque."
 }
