@@ -1,6 +1,6 @@
 {
-  "version": "1.7.0",
-  "versionCode": 11,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.7.0/gymjournal.apk",
-  "notes": "Música dentro de la app: loops incluidos o importa tus canciones, suenan en el circuito. Spotify de un toque."
+  "version": "1.8.0",
+  "versionCode": 12,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.8.0/gymjournal.apk",
+  "notes": "Exporta e importa tus rutinas (respáldalas en Drive) y comparte una rutina por WhatsApp o como imagen."
 }
