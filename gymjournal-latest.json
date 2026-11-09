@@ -1,6 +1,6 @@
 {
-  "version": "1.12.0",
-  "versionCode": 17,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.12.0/gymjournal.apk",
-  "notes": "Retoma el entreno si se cierra la app, el descanso y la duración siguen contando fuera de la app, borra series deslizando, cambia ejercicios con alternativas por otro implemento, peso con decimales, programas con \"Hoy te toca\", registra escribiendo y exporta para Claude."
+  "version": "1.12.1",
+  "versionCode": 18,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.12.1/gymjournal.apk",
+  "notes": "Arregla el botón de volver desde una rutina recién creada y la duración del circuito ahora sigue contando fuera de la app. Incluye todo lo de 1.12.0: retomar entreno, borrar series, alternativas de ejercicios, peso con decimales, programas, registrar escribiendo y exportar para Claude."
 }
