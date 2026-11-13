@@ -1,6 +1,6 @@
 {
-  "version": "1.13.1",
-  "versionCode": 20,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.13.1/gymjournal.apk",
-  "notes": "Nombres de ejercicios mejor traducidos, inicio más ordenado y barra de la rutina más limpia. Incluye todo lo de 1.13.0: editar con IA, cambiar por similar y lesiones y condiciones."
+  "version": "1.14.0",
+  "versionCode": 21,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.14.0/gymjournal.apk",
+  "notes": "Rutina para mí con IA, perfil (peso, objetivo, lesiones), progresión sugerida en el entreno, copia de seguridad automática, series por músculo, notificación durante el entreno, y superseries/calentamiento opcionales."
 }
