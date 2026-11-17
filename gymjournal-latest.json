@@ -1,6 +1,6 @@
 {
-  "version": "1.14.0",
-  "versionCode": 21,
-  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.14.0/gymjournal.apk",
-  "notes": "Rutina para mí con IA, perfil (peso, objetivo, lesiones), progresión sugerida en el entreno, copia de seguridad automática, series por músculo, notificación durante el entreno, y superseries/calentamiento opcionales."
+  "version": "1.15.0",
+  "versionCode": 22,
+  "apk": "https://github.com/cacorreap/personal-projects-public-apk/releases/download/gymjournal-v1.15.0/gymjournal.apk",
+  "notes": "Retoma el entreno en curso desde el inicio, salta o da por terminado un ejercicio, pide ejercicios a la IA con sus series durante el entreno, y filtra ejercicios por equipo."
 }
